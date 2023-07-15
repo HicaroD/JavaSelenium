@@ -18,13 +18,9 @@ public class GoogleTest extends BaseTest {
 
   @Test
   public void testMustSearchOnGoogle() throws Exception {
-    // Pesquisa Corinthians no Google
     googlePage.search("corinthians");
-
-    // Pega o parágrafo que contém os resultados
-    Thread.sleep(2000); // Espere dois segundos para página carregar
+    Thread.sleep(2000);
     String resultStats = googlePage.resultStats.getText();
-
     assertTrue(resultStats.contains("Aproximadamente"));
   }
 
