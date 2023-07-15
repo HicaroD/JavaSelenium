@@ -1,6 +1,5 @@
 package com.hicarod.tests;
 
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,10 +15,5 @@ public abstract class BaseTest {
     driver = new FirefoxDriver();
     driver.manage().window().maximize();
     driver.get(baseUrl);
-  }
-
-  @AfterClass
-  public static void tearDown() {
-    driver.quit();
   }
 }

@@ -2,31 +2,36 @@ package com.hicarod.tests;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.List;
-
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+
+import com.hicarod.pages.GooglePageObject;
 
 public class GoogleTest extends BaseTest {
+  private static GooglePageObject googlePage;
+
+  @BeforeClass
+  public static void beforeTest() {
+    googlePage = new GooglePageObject(driver);
+  }
+
   @Test
   public void testMustSearchOnGoogle() throws Exception {
-    // Obtem o campo de input
-    WebElement input = driver.findElement(By.name("q"));
-
     // Pesquisa Corinthians no Google
-    input.sendKeys("corinthians");
-    input.sendKeys(Keys.ENTER);
+    googlePage.googleSearchBar.sendKeys("corinthians");
+    googlePage.googleSearchBar.sendKeys(Keys.ENTER);
 
-    // Pega lista de spans da página atual
+    // Pega o parágrafo que contém os resultados
     Thread.sleep(2000); // Espere dois segundos para página carregar
-    List<WebElement> spans = driver.findElements(By.tagName("span"));
+    String resultStats = googlePage.resultStats.getText();
 
-    // Pega o texto do elemento que contém as estatísticas
-    boolean hasCorinthiansTextField = spans.stream().anyMatch(span -> span.getText().contains("Corinthians"));
+    assertTrue(resultStats.contains("Aproximadamente"));
+  }
 
-    // Garanta que existe um span com Corinthians dentro
-    assertTrue(hasCorinthiansTextField);
+  @AfterClass
+  public static void afterTest() {
+    driver.quit();
   }
 }
