@@ -17,7 +17,6 @@ public class GooglePageObject extends BasePageObject {
   }
 
   public void search(String searchQuery) {
-    googleSearchBar.sendKeys(searchQuery);
-    googleSearchBar.sendKeys(Keys.ENTER);
+    googleSearchBar.sendKeys(searchQuery + Keys.ENTER);
   }
 }
