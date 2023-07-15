@@ -17,7 +17,7 @@ public class GoogleTest extends BaseTest {
   }
 
   @Test
-  public void testMustSearchOnGoogle() throws Exception {
+  public void mustSearchCorinthiansOnGoogle() throws Exception {
     googlePage.search("corinthians");
     Thread.sleep(2000);
     String resultStats = googlePage.resultStats.getText();
