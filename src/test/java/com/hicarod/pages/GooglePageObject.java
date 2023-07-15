@@ -1,5 +1,6 @@
 package com.hicarod.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,5 +14,10 @@ public class GooglePageObject extends BasePageObject {
 
   public GooglePageObject(WebDriver driver) {
     super(driver);
+  }
+
+  public void search(String searchQuery) {
+    googleSearchBar.sendKeys(searchQuery);
+    googleSearchBar.sendKeys(Keys.ENTER);
   }
 }
