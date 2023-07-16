@@ -2,5 +2,8 @@
 /home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/tests/BaseTest.java
 /home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/tests/LoginTest.java
 /home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/pages/LoginPageObject.java
+/home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/tests/ProductTest.java
+/home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/builders/Product.java
+/home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/pages/ProductPageObject.java
 /home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/tests/GoogleTest.java
 /home/hicaro/Documentos/Prototypes/curso_java_selenium/curso_java/src/test/java/com/hicarod/pages/GooglePageObject.java
