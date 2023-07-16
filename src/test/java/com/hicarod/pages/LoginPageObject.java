@@ -21,6 +21,10 @@ public class LoginPageObject extends BasePageObject {
     super(driver);
   }
 
+  public String getCurrentPageTitle() {
+    return driver.getTitle();
+  }
+
   public void fillEmail(String email) {
     emailInput.clear();
     emailInput.sendKeys(email);
