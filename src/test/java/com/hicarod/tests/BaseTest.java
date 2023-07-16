@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public abstract class BaseTest {
   protected static WebDriver driver;
-  private static String baseUrl = "https://www.google.com";
+  private static String baseUrl = "file:///home/hicaro/Documentos/Prototypes/curso_java_selenium/controle-de-produtos/sistema/login.html";
   private static String driverPath = "src/test/java/com/hicarod/resources/geckodriver";
 
   @BeforeClass

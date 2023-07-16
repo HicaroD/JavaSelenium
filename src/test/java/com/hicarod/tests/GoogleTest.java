@@ -13,6 +13,7 @@ public class GoogleTest extends BaseTest {
 
   @BeforeClass
   public static void beforeTest() {
+    driver.get("https://www.google.com");
     googlePage = new GooglePageObject(driver);
   }
 

@@ -6,16 +6,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPageObject extends BasePageObject {
   @FindBy(id = "email")
-  WebElement emailInput;
+  public WebElement emailInput;
 
   @FindBy(id = "senha")
-  WebElement passwordInput;
+  public WebElement passwordInput;
 
   @FindBy(id = "mensagem")
-  WebElement errorMessage;
+  public WebElement errorMessage;
 
   @FindBy(id = "btn-entrar")
-  WebElement submitButton;
+  public WebElement submitButton;
 
   public LoginPageObject(WebDriver driver) {
     super(driver);
@@ -27,8 +27,29 @@ public class LoginPageObject extends BasePageObject {
   }
 
   public void fillPassword(String password) {
-    emailInput.clear();
+    passwordInput.clear();
     passwordInput.sendKeys(password);
+  }
+
+  public String getErrorMessage() {
+    return errorMessage.getText();
+  }
+
+  public void login(String email, String password) {
+    clearFields();
+    if (email != null) {
+      fillEmail(email);
+    }
+    if (password != null) {
+      fillPassword(password);
+    }
+
+    submitCredentials();
+  }
+
+  public void clearFields() {
+    emailInput.clear();
+    passwordInput.clear();
   }
 
   public void submitCredentials() {
